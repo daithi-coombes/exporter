@@ -1,0 +1,782 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Def",
+				"DefaultImage"
+			],
+			[
+				"req",
+				"requested_file"
+			],
+			[
+				"Defa",
+				"DefaultImager  (class)"
+			],
+			[
+				"Default",
+				"DefaultImage  (class)"
+			],
+			[
+				"debug",
+				"debug_backtrace"
+			],
+			[
+				"defaul",
+				"default_image  (variable)"
+			],
+			[
+				"me",
+				"menu-menu"
+			],
+			[
+				"woo",
+				"woocommerce_loop"
+			],
+			[
+				"produ",
+				"product_categories"
+			],
+			[
+				"thu",
+				"thumbnail_id"
+			],
+			[
+				"http_build",
+				"http_build_query"
+			],
+			[
+				"wta",
+				"wtatube"
+			],
+			[
+				"fun_get_ar",
+				"func_get_args"
+			],
+			[
+				"WTA",
+				"WTATUBE_DIR"
+			],
+			[
+				"pro",
+				"provider"
+			],
+			[
+				"ms",
+				"msgs"
+			],
+			[
+				"assert",
+				"assertInstanceOf"
+			],
+			[
+				"err",
+				"errors"
+			],
+			[
+				"wtat",
+				"wtatube-action"
+			],
+			[
+				"wtap",
+				"wtaprovider-action"
+			],
+			[
+				"add",
+				"add_submenu_page"
+			],
+			[
+				"add_",
+				"add_menu_page"
+			],
+			[
+				"func_",
+				"func_get_args"
+			],
+			[
+				"add_action",
+				"add_action_admin_menu"
+			],
+			[
+				"add_ac",
+				"add_action_admin_menu"
+			],
+			[
+				"sort",
+				"sortable"
+			],
+			[
+				"wta-",
+				"wtatube-provider"
+			],
+			[
+				"menu",
+				"menu_slug"
+			],
+			[
+				"provide",
+				"provider_add"
+			],
+			[
+				"NAME",
+				"namespace"
+			],
+			[
+				"API_Con_M",
+				"API_Con_Manager"
+			],
+			[
+				"redirect_ur",
+				"redirect_url"
+			],
+			[
+				"redi",
+				"redirect_url"
+			],
+			[
+				"auto",
+				"autoflow-login"
+			],
+			[
+				"API_C",
+				"API_Con_Manager"
+			],
+			[
+				"http_buil",
+				"http_build_query"
+			],
+			[
+				"ser",
+				"service"
+			],
+			[
+				"extr",
+				"extra_params"
+			],
+			[
+				"conn",
+				"connections_test"
+			],
+			[
+				"non_profi",
+				"non_profit_week"
+			],
+			[
+				"direct",
+				"director-slider"
+			],
+			[
+				"reader-",
+				"reader-slider"
+			],
+			[
+				"blk",
+				"blk_price"
+			],
+			[
+				"meta",
+				"meta_keys"
+			],
+			[
+				"obj",
+				"obj2"
+			],
+			[
+				"deac",
+				"deactive"
+			],
+			[
+				"acti",
+				"active"
+			],
+			[
+				"servi",
+				"services"
+			],
+			[
+				"do_call",
+				"do_callback_foo"
+			],
+			[
+				"func_get_",
+				"func_get_args"
+			],
+			[
+				"call_user",
+				"call_user_func"
+			],
+			[
+				"http_b",
+				"http_build_query"
+			],
+			[
+				"get_lo",
+				"get_login_url"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 117.0,
+		"selected_items":
+		[
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"ad",
+				"Git: Add..."
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"new",
+				"Git: New Branch"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"pull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"chan",
+				"Git: Change Branch"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git pul",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git chan",
+				"Git: Change Branch"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"git ad",
+				"Git: Add..."
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"git new",
+				"Git: New Branch"
+			],
+			[
+				"change",
+				"Git: Change Branch"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pus",
+				"Git: Push Current Branch"
+			],
+			[
+				"bran",
+				"Git: New Branch"
+			],
+			[
+				"pu",
+				"Git: Pull Current Branch"
+			],
+			[
+				"pul",
+				"Git: Pull Current Branch"
+			],
+			[
+				"ch",
+				"Git: Change Branch"
+			],
+			[
+				"cha",
+				"Git: Change Branch"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 114.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/daithi/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/index.php",
+		"/var/www/default-image/lib/image.class.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/lib/cli.class.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/README.md",
+		"/var/www/default-image/lib/php_image_magician.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/lib/image.class.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/lib/php_image_magician.php",
+		"/var/www/default-image/index.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/sublime3.sublime-project",
+		"/var/www/default-image/lib/error.class.php",
+		"/var/www/default-image/lib/cli.class.php",
+		"/home/daithi/.config/sublime-text-3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/lib/defaultimage.class.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/bin/script.php",
+		"/var/www/imm.loc/public_html/cms/modules/default-image/lib/error.class.php",
+		"/var/www/pimcore.loc/public_html/pimcore/models/Version/Resource.php",
+		"/var/www/default-image/sublime3.sublime-project",
+		"/home/daithi/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/daithi/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/daithi/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/var/www/imm.loc/public_html/cms/modules/default_images/lib/defaultimage.class.php",
+		"/var/www/imm.loc/public_html/uploads/.htaccess",
+		"/var/www/imm.loc/public_html/cms/modules/default_images/index.php",
+		"/var/www/imm.loc/public_html/cms/modules/default_images/bin/script.php",
+		"/var/www/imm.loc/untitled.sublime-project",
+		"/var/www/imm.loc/public_html/cms/assets/plugins/ckfinder/_samples/public_api.html",
+		"/var/www/imm.loc/public_html/cms/assets/plugins/ckfinder/core/connector/php/php4/Core/AccessControlConfig.php",
+		"/var/www/imm.loc/public_html/cms/assets/plugins/ckeditor/ckeditor.pack",
+		"/var/www/imm.loc/public_html/uploads/index.php",
+		"/var/www/imm.loc/public_html/.htaccess",
+		"/var/www/imm.loc/public_html/uploads/<?php.php",
+		"/var/www/imm.loc/public_html/uploads/products/missing_file.php",
+		"/var/www/arkoni.loc/public_html/cms/classes/homepage.class.php",
+		"/var/www/arkoni.loc/public_html/index.php",
+		"/var/www/arkoni.loc/public_html/assets/js/global.js",
+		"/var/www/arkoni.loc/public_html/sftp-config.json",
+		"/var/www/arkoni.loc/public_html/cms/classes/requires.db.php",
+		"/var/www/arkoni.loc/public_html/sftp.json",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/style.css",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/functions.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/login.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/post-meta.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/front-page.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce/templates/myaccount/form-login.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce/checkout/review-order.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/header.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/page-home.php",
+		"/var/www/cafe7.loc/public_html/.htaccess",
+		"/home/daithi/Downloads/29-04-14.sql",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/page.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/responsive/index.php",
+		"/home/daithi/&",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/full-width-page.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/soliloquy-lite/soliloquy-lite.php",
+		"/home/daithi/Downloads/cafe7ie_cafe_content_data.sql",
+		"/home/daithi/Downloads/cafe7ie3_mv7yf (3).sql",
+		"/var/www/cafe7.loc/public_html/wp-content/README.md",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/USER TEST ID",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/USER TEST ID 14",
+		"/home/daithi/Downloads/cfesvnire_db1tb_users (1).sql",
+		"/home/daithi/Downloads/cfesvnire_db1tb_users.sql",
+		"/home/daithi/Downloads/cafe7ie3_mv7yf (2).sql",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce/archive-product.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce/content-product_cat.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce/includes/admin/reports/class-wc-admin-report.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce/taxonomy-product_cat.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce/includes/wc-core-functions.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/responsive/page.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce/templates/content-product.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce/includes/wc-template-functions.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/responsive/archive.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce/loop/loop-start.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce/templates/taxonomy-product_cat.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce/taxonomy-product_tag.php",
+		"/var/www/cafe7.loc/public_html/wp-content/plugins/regenerate-thumbnails/regenerate-thumbnails.php",
+		"/home/daithi/Downloads/cafe7_loc.sql",
+		"/var/www/cafe7.loc/public_html/htaccess (2)",
+		"/home/daithi/Downloads/cafe7ie3_mv7yf (1).sql",
+		"/home/daithi/Downloads/cafe7ie3_mv7yf.sql",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/sidebar-home.php",
+		"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/index.php",
+		"/var/www/cafe7.loc/public_html/wp-config.php",
+		"/var/www/woocommerce-product-columns/index.php",
+		"/var/www/cafe7.loc/foo.php",
+		"/var/www/cafe7.loc/active.plugins.live.site",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/view/Add.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/controller/Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/view/Main.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/Router.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/model/Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/Error.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/phpdoc.dist.xml",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/view/test_Add.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/.gitignore",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/controller/test_Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/model/test_Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/index.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/view/test_Main.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/test_Router.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/index.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/controller/Error.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/test_Foo.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/view/Add.php.old",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/test_Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/Model/Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/Controller/test_Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/Controller/Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/Model/test_Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/admin/Add.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/admin/Main.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/bootstrap.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider/admin/test_Main.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/test_wordpress_plugin_tests.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/phpunit.xml",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/test/provider/admin/test-Main.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/test/test-foo.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/test/bootstrap.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/phpunit.xml.old",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/test/provider/admin/test-Add.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/custom-list-table-example/list-table-example.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/admin/WTATube.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/test/provider/test-Provider.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/test/provider/admin/test-View.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/lib/provider/admin/View.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/wpbase-video/wpbase-video.php",
+		"/var/www/porn.loc/public_html/wp-content/plugins/porn/index.php"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/var/www/cafe7.loc/public_html/wp-content/themes/responsive",
+			"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7",
+			"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce",
+			"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce",
+			"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce",
+			"/var/www/cafe7.loc/public_html/wp-content/themes",
+			"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce",
+			"/var/www/cafe7.loc",
+			"/var/www/cafe7.loc/public_html/wp-content/plugins/woocommerce",
+			"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7/woocommerce",
+			"/var/www/cafe7.loc/public_html/wp-content/themes/cafe7",
+			"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests",
+			"/var/www/porn.loc/public_html/wp-content/plugins/wta-tube/tests/provider",
+			"/var/www/api-connection-manager.loc/public_html/wp-content/plugins/api-connection-manager/lib",
+			"/var/www/api-connection-manager.loc/public_html/wp-content/plugins/api-connection-manager",
+			"/var/www/api-connection-manager.loc/public_html/wp-content/plugins/api-connection-manager/tests/lib",
+			"/var/www/api-connection-manager.loc/public_html/unit-tests/tests",
+			"/var/www/api-connection-manager.loc/public_html/wp-content/plugins/api-connection-manager/tests/lib",
+			"/var/www/api-connection-manager.loc/public_html/wp-content/plugins/api-connection-manager/lib",
+			"/var/www/api-connection-manager.loc/public_html/wp-content/plugins/api-connection-manager"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"index",
+			"=",
+			"ts->",
+			"->",
+			"=",
+			"->",
+			"=>",
+			"stack_trace",
+			",",
+			"defaults",
+			"get_http_arguments",
+			"$arguments",
+			"=",
+			"DefaultImage",
+			"/var/sites/c/cafe7.ie",
+			"web@cafe7.loc",
+			"cafe7.ie",
+			"comments_template",
+			"soliloquy",
+			"menu",
+			"www",
+			"/var/sites/c/cafe7.loc",
+			"cafe7.ie",
+			"(21",
+			"(",
+			"(24",
+			"(",
+			"cfesvnire_db1tb_",
+			"(",
+			"cfesvnire_db1tb_",
+			"cfesvnire_db1tb",
+			"18",
+			"(",
+			"(358, ",
+			"cfesvnire_db1tb_",
+			"cfesvnire_db1tb",
+			"(",
+			"Cafe7.ie",
+			"/var/sites/c/cafe7.ie",
+			"web@cafe7.ie",
+			"http://cafe7.ie",
+			"woocommerce_product_subcategories",
+			"<ul",
+			"get_header",
+			"function wc_get_template",
+			"wc_get_template",
+			"var_dump",
+			"/var/sites/c/cafe7.ie",
+			"/var/sites/c/",
+			"woocommerce_subcategory_thumbnail",
+			"web@cafe7.ie",
+			"http://cafe7.ie",
+			"web@cafe7.ie",
+			"http://cafe7.ie",
+			"http://",
+			"business",
+			"http://www.cafe7.ie/cafe-contents/uploads/2013/12/business-bottom-left.jpg",
+			"http://www.cafe7.ie/cafe-contents/uploads/2013/11/vertus.jpg",
+			"url(",
+			"http://www.cafe7.ie/cafe-contents/uploads/2013/11/mouture.jpg",
+			"Equipment",
+			"equipment",
+			"content-gradient.jpg",
+			"http://www.cafe7.ie/cafe-contents/uploads/2013/10/content-gradient.jpg",
+			"http://cafe7.ie/cafe-contents/uploads/2013/10/content-gradient.jpg",
+			"content-gradient",
+			"get_stylesheet_directory_uri",
+			"get_template_directory_uri",
+			"web@cafe7.ie",
+			"http://cafe7.ie",
+			"=>",
+			"220",
+			":\"",
+			";",
+			"option_name",
+			"$this->menu_slug",
+			"var_dump",
+			"__NAMESPACE__ . '-errors'",
+			"__construct",
+			"Main",
+			"TT_Example_List_Table",
+			"RSS",
+			"my_option_name",
+			"title",
+			"Title",
+			"title",
+			"ID Number",
+			"id_number",
+			"'my-setting-admin'",
+			"setting_section_id",
+			"baw-settings-group",
+			"\"",
+			"tests",
+			"http://david-coombes.com/wp-admin/admin-ajax.php?action=api-con-manager&amp;api-con-action=request_token",
+			"request_token",
+			"http://david-coombes.com/wp-admin/admin-ajax.php?action=api-con-manager&amp;api-con-action=request_token",
+			"request-t",
+			"get_redirect_url",
+			"die",
+			"redirect_url",
+			"redirect_uri",
+			"get_redirect_url",
+			"throw",
+			"redirect_url",
+			"var_dump",
+			".\n",
+			"var_dump",
+			"find module for",
+			"Dropbox",
+			"dropbox",
+			"Dropbox",
+			"var_dump",
+			"&",
+			"var_dump",
+			"api-con-manager-callback",
+			"autoflow_enqueue_scripts",
+			"print_login_buttons",
+			"var_dump",
+			"http://www.gutenberg.org/files/2162/2162-h/2162-h.htm",
+			"bio",
+			"david-coombes",
+			"application id",
+			"@group foo",
+			"foo",
+			"year",
+			"profit",
+			"week",
+			"price_per_block"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/var/www/cafe7.loc",
+			"admin@localhost.loc",
+			"cafe7.loc",
+			"/var/www/cafe7.loc",
+			"cafe7.loc",
+			"wp_",
+			"cafe7.loc",
+			"/var/www/cafe7.loc",
+			"admin@localhost.loc",
+			"http://cafe7.loc",
+			"/var/www/cafe7.loc",
+			"admin@localhost.loc",
+			"http://cafe7.loc",
+			"admin@localhost.loc",
+			"http://cafe7.loc"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 88.0
+	},
+	"output.sftp":
+	{
+		"height": 265.0
+	},
+	"output.xdebug":
+	{
+		"height": 88.0
+	},
+	"project": "exporter.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
