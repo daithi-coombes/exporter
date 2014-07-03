@@ -1,9 +1,22 @@
 <?php
 /**
- * Export data from mysql table
+ * Export large sized data from mysql table as csv file
  *
  * @usage:
  * <code>
+ * 	$export_db = mysqli_connect( $db_host, $db_user, $db_password, $db_name );
+ * 	$params = array(
+ * 		'db'			=> $export_db,	//must be mysqli instance
+ * 		'batch_size'	=> 5000,
+ * 		'max_results'	=> 200,
+ * 		'sql'			=> $sql
+ * 	);
+ * 	$results = Exporter::factory( $params )
+ * 		->batch()
+ * 		->output( 'rolls', false )
+ * 		->get( 'results' );
+ * 	
+ * 	var_dump($results);
  * </code>
  * @author daithi coombes <webeire@gmail.com>
  */
@@ -48,6 +61,7 @@ class Exporter{
 	 * Batch process.
 	 * Writes records to tmpfile
 	 * @param  integer $start   Default 0. LIMIT start value
+	 * @param  mysqli $db   Connected mysqli instance
 	 * @return Exporter           Returns self for chaining
 	 */
 	public function batch( $start=0 ){
@@ -59,10 +73,16 @@ class Exporter{
 		//set the LIMIT statement
 		$this->sql_set_limit( $this->start, $this->end );
 
+		//set the tmpfile
+		if( !$this->tmpfile )
+			$this->tmpfile = $this->get_tmpfile();
+
 		//run query
-		$this->db->query( $this->sql );
-		while( $row = $this->db->fetchArray('array') )
+		$this->query = mysqli_query( $this->db, $this->sql );
+		while( $row = mysqli_fetch_assoc( $this->query ) ){
 			$this->records[] = $row;
+			fputcsv( $this->tmpfile, $row );
+		}
 
 		//need to run more?
 		if( 
@@ -89,11 +109,39 @@ class Exporter{
 	}
 
 	/**
+	 * Output csv to stdout
+	 * @param  string $filename Default null. Filename
+	 * @param  boolean $die Default true. Whether to die after or not
+	 * @return Exporter If $die is false then returns this for chaining
+	 */
+	public function output( $filename=null, $die=true ){
+
+		//set extension
+		$info = pathinfo($filename);
+		if( empty($info['extension']) )
+			$filename .= ".csv";
+
+		//send headers
+		header("Content-Type: application/csv");
+		header("Content-Disposition: attachment;Filename={$filename}");
+
+		//get file
+		rewind($this->tmpfile);
+		while( ($line=fgets($this->tmpfile))!==false )
+			print $line."\n";
+
+		if( $die )
+			die();
+		else
+			return $this;
+	}
+
+	/**
 	 * Set a param.
 	 * If the private method set_$param exists then it will be executed
 	 * @param string|array $params An array of param=>value pairs or param name
 	 * @param mixed $value Optional. If $param is string pass value here.
-	 * @return returns this for chaining
+	 * @return Exporter this for chaining
 	 */
 	public function set( $params, $value=null ){
 
@@ -138,7 +186,7 @@ class Exporter{
 	 * Use $this->set( 'db', Database )
 	 * @param Database $db The database instance
 	 */
-	private function set_db( Database $db ){
+	private function set_db( mysqli $db ){
 
 		$this->db = $db;
 	}
@@ -152,7 +200,8 @@ class Exporter{
 	private function sql_set_limit( $start, $end ){
 
 		$pattern = '/LIMIT\s+([0-9]+).+\s([0-9]+)/im';
-		$statement = "LIMIT {$start}, {$end}";
+		$statement = "
+			LIMIT {$start}, {$end}";
 
 		//search for LIMIT statement
 		preg_match($pattern, $this->sql, $matches);
