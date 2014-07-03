@@ -32,6 +32,8 @@ class Exporter{
 	private $max_results;
 	/* @var array An array of mysql records */
 	private $records = array();
+	/* @var string A function name for extra parsing of each row */
+	private $row_hook;
 	/* @var string The sql query to run. @see Exporter::set_sql() */
 	private $sql;
 	/* @var resource File handle returned by tmpfile(). 
@@ -80,8 +82,13 @@ class Exporter{
 		//run query
 		$this->query = mysqli_query( $this->db, $this->sql );
 		while( $row = mysqli_fetch_assoc( $this->query ) ){
+
 			$this->records[] = $row;
 			fputcsv( $this->tmpfile, $row );
+
+			//is there a user defined hook?
+			if( $this->row_hook )
+				call_user_func_array($this->row_hook, array($row));
 		}
 
 		//need to run more?
