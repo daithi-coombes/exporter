@@ -26,6 +26,8 @@ class Exporter{
 	protected $errors = array();
 	/* @var integer The max rows to return before making new query */
 	private $batch_size = 10000;
+	/* @var integer The record counter */
+	private $count_records = 0;
 	/* @var mysqli The database instance */
 	private $db;
 	/* @var array An array of database settings @see Exporter::get_new_db() */
@@ -47,7 +49,7 @@ class Exporter{
 		if( count($params) )
 			$this->set( $params );
 
-		$this->db = $this->get_new_db();
+		//$this->db = $this->get_new_db();
 
 	}
 
@@ -74,7 +76,7 @@ class Exporter{
 		return '<script type="text/javascript" src="'.$uri.'/lib/script.js"></script>'
 			. '<script type="text/javascript">'
 			. '	var ExporterNonce = "' . Ajax::factory()->nonce_create( 'run_batch' ) . '";'."\n"
-			. '	var ExporterURL = "' . $uri . '";'."\n"
+			. '	var ExporterURL = "' . $uri . '/";'."\n"
 			. '</script>';
 	}
 
@@ -91,6 +93,11 @@ class Exporter{
 		if( count($this->errors) )
 			return $this;
 
+		//start new db instance (clear memory)
+		unset($this->db);
+		gc_collect_cycles();	//garbage collection
+		$this->db = $this->get_new_db();
+
 		//vars
 		$this->start = $start;
 		$this->end = (int) $start + (int) $this->batch_size;
@@ -106,18 +113,20 @@ class Exporter{
 		$this->query = mysqli_query( $this->db, $this->sql );
 		while( $row = mysqli_fetch_assoc( $this->query ) ){
 
-			//$this->records[] = $row;
 			fputcsv( $this->tmpfile, $row );
 
 			//is there a user defined hook?
 			if( $this->row_hook )
 				call_user_func_array($this->row_hook, array($row));
 		}
+		$count = mysqli_num_rows( $this->query );
 
 		//need to run more?
-		if( 
-			!$this->max_results || ( $this->max_results && (count($this->records) < $this->max_results) ) )
+		if( $count>0 ){
+
+			$this->count_records += $count;
 			$this->batch( $this->end, $this->records );
+		}
 
 		//trim records if max_results set
 		if( $this->max_results )
@@ -161,19 +170,37 @@ class Exporter{
 		if( count($this->errors) )
 			return $this;
 
+		$ret = array();
+		$ret['meta'] = stream_get_meta_data($this->tmpfile);
+		$ret['info'] = pathinfo($ret['meta']['uri']);
+
+		if( !move_uploaded_file($ret['meta']['uri'], EXPORTER_OUTPUT_DIR . '/' . $ret['info']['filename'].'.csv') )
+			$ret['error'] = 'Unable to move created file';
+		else
+			$ret['url'] = EXPORTER_OUTPUT_URL . '/' . $info['filename'].'.csv';
+
+		return $ret;
+		//if( !move_uploaded_file(filename, destination) )
+
+		/**
+		 * @deprecated
+		 */
+
 		//set extension
 		$info = pathinfo($filename);
 		if( empty($info['extension']) )
 			$filename .= ".csv";
 
 		//send headers
-		header("Content-Type: application/csv");
-		header("Content-Disposition: attachment;Filename={$filename}");
+		//header("Content-Type: application/csv");
+		//header("Content-Disposition: attachment;Filename={$filename}");
 
 		//get file
 		rewind($this->tmpfile);
-		while( ($line=fgets($this->tmpfile))!==false )
+		while( ($line=fgets($this->tmpfile))!==false ){
 			print $line."\n";
+			xdebug_break();
+		}
 
 		if( $die )
 			die();
@@ -230,7 +257,7 @@ class Exporter{
 	 */
 	private function get_new_db(){
 
-		if( $this->db )
+		if( @$this->db )
 			$this->db->close();
 
 		$db = @new mysqli( 
@@ -263,7 +290,7 @@ class Exporter{
 	 */
 	private function sql_set_limit( $start, $end ){
 
-		$pattern = '/LIMIT\s+([0-9]+).+\s([0-9]+)/im';
+		$pattern = '/\sLIMIT\s+([0-9]+).+\s([0-9]+)/im';
 		$statement = " LIMIT {$start}, {$end}";
 
 		//search for LIMIT statement

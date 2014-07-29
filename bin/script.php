@@ -9,30 +9,10 @@ if( $params['debug']===true){
 
 $results = Exporter::factory( $params )
 	->batch()
-	->output( 'rolls', false )
-	->get( 'records' );
+	->output( 'rolls', false );
+	//->get( 'records' );
 //end Export csv and get results
 
 
-/**
- * Mark used roll id's as exported
- */
-
-
-//print result
-if( is_object($results) ){
-
-	$errors = $results->get_errors('errors');
-	$res = array(
-		'ok' => 'false',
-		'errors' => $errors
-	);
-}
-else
-	$res = array(
-		'ok' => 'true',
-		'message' => $message
-	);
-
-print json_encode( $res );
+print json_encode( $results );
 die();
