@@ -26,6 +26,8 @@ class Exporter{
 	private $batch_size = 10000;
 	/* @var Database The database instance */
 	private $db;
+	/* @var array An array of database settings @see Exporter::get_new_db()
+	private $db_settings;
 	/* @var array An array of Error instances. Empty array if none */
 	private $errors = array();
 	/* @var integer The max results to return */
@@ -49,14 +51,29 @@ class Exporter{
 	 * @param  array  $params An array of param=>value pairs
 	 * @return Exporter         Returns new Exporter instance
 	 */
-	public function factory( $params=array() ){
+	static public function factory( $params=array() ){
 
+		set_time_limit( 0 );
 		$obj = new Exporter();
 
 		if( count($params) )
 			return $obj->set( $params );
 
 		return $obj;
+	}
+
+	/**
+	 * Get the <script> tag
+	 * @param  string $uri The url to the package directory
+	 * @return string      The scirpt tag
+	 */
+	static public function get_script( $uri ){
+
+		return '<script type="text/javascript" src="'.$uri.'/lib/script.js"></script>'
+			. '<script type="text/javascript">'
+			. '	var ExporterNonce = "' . Ajax::factory()->nonce_create( 'run_batch' ) . '";'."\n"
+			. '	var ExporterURL = "' . $uri . '/bin/script.php";'."\n"
+			. '</script>';
 	}
 
 	/**
@@ -79,11 +96,15 @@ class Exporter{
 		if( !$this->tmpfile )
 			$this->tmpfile = $this->get_tmpfile();
 
+		//get new database instance
+		unset( $this->db );
+		$this->db = $this->get_new_db();
+
 		//run query
 		$this->query = mysqli_query( $this->db, $this->sql );
 		while( $row = mysqli_fetch_assoc( $this->query ) ){
 
-			$this->records[] = $row;
+			//$this->records[] = $row;
 			fputcsv( $this->tmpfile, $row );
 
 			//is there a user defined hook?
@@ -92,10 +113,7 @@ class Exporter{
 		}
 
 		//need to run more?
-		if( 
-			(count($this->records) <= $this->batch_size) ||
-			($this->max_results && (count($this->records) < $this->max_results))
-		)
+		if( !$this->max_results || ( $this->max_results && (count($this->records) < $this->max_results) ) )
 			$this->batch( $this->end, $this->records );
 
 		//trim records if max_results set
@@ -180,22 +198,36 @@ class Exporter{
 	}
 
 	/**
+	 * Get new mysqli instance.
+	 *
+	 * Set $this->db_settings[
+	 * 	'host' => '',
+	 * 	'user' => '',
+	 * 	'pswd' => '',
+	 * 	'name' => ''
+	 * ]
+	 * @return mysqli Returns a new mysqli instance
+	 */
+	private function get_new_db(){
+
+		if( $this->db )
+			$this->db->close();
+
+		return new mysqli( 
+			$this->db_settings['host'],
+			$this->db_settings['user'],
+			$this->db_settings['pswd'],
+			$this->db_settings['name']
+		);
+	}
+
+	/**
 	 * Get file handle to tmp file
 	 * @return resource Returns tmp file handle
 	 */
 	private function get_tmpfile(){
 
 		return tmpfile();
-	}
-
-	/**
-	 * Sets the database.
-	 * Use $this->set( 'db', Database )
-	 * @param Database $db The database instance
-	 */
-	private function set_db( mysqli $db ){
-
-		$this->db = $db;
 	}
 
 	/**
