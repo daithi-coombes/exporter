@@ -22,14 +22,14 @@
  */
 class Exporter{
 
+	/* @var array An array of Error instances. Empty array if none */
+	protected $errors = array();
 	/* @var integer The max rows to return before making new query */
 	private $batch_size = 10000;
-	/* @var Database The database instance */
+	/* @var mysqli The database instance */
 	private $db;
-	/* @var array An array of database settings @see Exporter::get_new_db()
+	/* @var array An array of database settings @see Exporter::get_new_db() */
 	private $db_settings;
-	/* @var array An array of Error instances. Empty array if none */
-	private $errors = array();
 	/* @var integer The max results to return */
 	private $max_results;
 	/* @var array An array of mysql records */
@@ -42,7 +42,12 @@ class Exporter{
 		@see Exporter::get_tmpfile() */
 	private $tmpfile;
 
-	function __construct(){
+	function __construct( array $params ){
+
+		if( count($params) )
+			$this->set( $params );
+
+		$this->db = $this->get_new_db();
 
 	}
 
@@ -54,10 +59,7 @@ class Exporter{
 	static public function factory( $params=array() ){
 
 		set_time_limit( 0 );
-		$obj = new Exporter();
-
-		if( count($params) )
-			return $obj->set( $params );
+		$obj = new Exporter( $params );
 
 		return $obj;
 	}
@@ -72,7 +74,7 @@ class Exporter{
 		return '<script type="text/javascript" src="'.$uri.'/lib/script.js"></script>'
 			. '<script type="text/javascript">'
 			. '	var ExporterNonce = "' . Ajax::factory()->nonce_create( 'run_batch' ) . '";'."\n"
-			. '	var ExporterURL = "' . $uri . '/bin/script.php";'."\n"
+			. '	var ExporterURL = "' . $uri . '";'."\n"
 			. '</script>';
 	}
 
@@ -85,6 +87,10 @@ class Exporter{
 	 */
 	public function batch( $start=0 ){
 
+		//error check
+		if( count($this->errors) )
+			return $this;
+
 		//vars
 		$this->start = $start;
 		$this->end = (int) $start + (int) $this->batch_size;
@@ -95,10 +101,6 @@ class Exporter{
 		//set the tmpfile
 		if( !$this->tmpfile )
 			$this->tmpfile = $this->get_tmpfile();
-
-		//get new database instance
-		unset( $this->db );
-		$this->db = $this->get_new_db();
 
 		//run query
 		$this->query = mysqli_query( $this->db, $this->sql );
@@ -113,7 +115,8 @@ class Exporter{
 		}
 
 		//need to run more?
-		if( !$this->max_results || ( $this->max_results && (count($this->records) < $this->max_results) ) )
+		if( 
+			!$this->max_results || ( $this->max_results && (count($this->records) < $this->max_results) ) )
 			$this->batch( $this->end, $this->records );
 
 		//trim records if max_results set
@@ -130,7 +133,20 @@ class Exporter{
 	 */
 	public function get( $param ){
 
+		//error check
+		if( count($this->errors) )
+			return $this;
+
 		return $this->$param;
+	}
+
+	/**
+	 * Get the errors array
+	 * @return array An array of errors. Empty array if none
+	 */
+	public function get_errors(){
+
+		return $this->errors;
 	}
 
 	/**
@@ -140,6 +156,10 @@ class Exporter{
 	 * @return Exporter If $die is false then returns this for chaining
 	 */
 	public function output( $filename=null, $die=true ){
+
+		//error check
+		if( count($this->errors) )
+			return $this;
 
 		//set extension
 		$info = pathinfo($filename);
@@ -213,12 +233,17 @@ class Exporter{
 		if( $this->db )
 			$this->db->close();
 
-		return new mysqli( 
+		$db = @new mysqli( 
 			$this->db_settings['host'],
 			$this->db_settings['user'],
 			$this->db_settings['pswd'],
 			$this->db_settings['name']
 		);
+
+		if($db->connect_errno>0)
+			$this->errors[] = "MySqli connect error: ".$db->connect_error;
+
+		return $db;
 	}
 
 	/**
@@ -239,8 +264,7 @@ class Exporter{
 	private function sql_set_limit( $start, $end ){
 
 		$pattern = '/LIMIT\s+([0-9]+).+\s([0-9]+)/im';
-		$statement = "
-			LIMIT {$start}, {$end}";
+		$statement = " LIMIT {$start}, {$end}";
 
 		//search for LIMIT statement
 		preg_match($pattern, $this->sql, $matches);

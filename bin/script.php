@@ -20,11 +20,14 @@ $results = Exporter::factory( $params )
 
 
 //print result
-if( count($errors) )
+if( is_object($results) ){
+
+	$errors = $results->get_errors('errors');
 	$res = array(
 		'ok' => 'false',
 		'errors' => $errors
 	);
+}
 else
 	$res = array(
 		'ok' => 'true',

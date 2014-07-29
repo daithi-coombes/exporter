@@ -2,6 +2,7 @@
 
 define('EXPORTER_DIR', realpath(dirname(__FILE__)) );
 
+require_once( EXPORTER_DIR . '/config/config.php' );
 require_once( EXPORTER_DIR . '/lib/ajax.class.php' );
 require_once( EXPORTER_DIR . '/lib/exporter.class.php' );
 
@@ -35,10 +36,11 @@ if( $id )
 //Exporter params
 $ar_rolls = array();
 $params = array(
+	'debug' => true,
 	'db_settings'	=> array(
 		'host' => $db_host,
 		'user' => $db_user,
-		'pswd' => $db_password,
+		'pswd' => $db_pswd,
 		'name' => $db_name
 	),
 	'batch_size'	=> 5000,
@@ -48,6 +50,8 @@ $params = array(
 );
 //end Exporter params
 
+
+require_once( EXPORTER_DIR . '/bin/script.php' );
 
 /**
  * Calback function for the exporter package. Will build up array of unique
